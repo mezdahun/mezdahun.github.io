@@ -2556,12 +2556,14 @@ input, select, textarea {
 			float: left;
 			margin: 0 1.5em 1em 0;
 			top: 0.25em;
+			width: 12em;
 		}
 
 		.image.right {
 			float: right;
 			margin: 0 0 1em 1.5em;
 			top: 0.25em;
+			width: 12em;
 		}
 
 		.image.left, .image.right {
@@ -3220,6 +3222,11 @@ input, select, textarea {
 
         .wrapper.style1 {
             background: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95)), url('../../images/pexels-drew-rae-580679.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        .wrapper.style-collforaging {
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../../images/pexels-karolina-grabowska-4194842.jpg') no-repeat center center;
             background-size: cover;
         }
 

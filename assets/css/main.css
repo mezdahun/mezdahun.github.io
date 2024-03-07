@@ -2509,6 +2509,24 @@ input, select, textarea {
 
 /* Image */
 
+    .small-size {
+        width: 11em; /* Restricts the width to 100 pixels */
+        height: 11em; /* Restricts the height to 100 pixels */
+        /* Additional properties to ensure content fits or is centered, if necessary */
+        overflow: hidden; /* Hides content that overflows the box */
+        display: inline-block; /* Enables flexbox layout */
+        justify-content: center; /* Centers content horizontally */
+        align-items: center; /* Centers content vertically */
+    }
+
+        .small-size img {
+            border-radius: 50%; /* Rounded corners */
+            width: 100%; /* Make the image's width fill the container */
+            height: 100%; /* Make the image's height fill the container */
+            object-fit: contain; /* Scale the image to maintain its aspect ratio without cropping */
+            display: block; /* Remove any default inline spacing */
+        }
+
 	.image {
 		border-radius: 4px;
 		border: 0;
@@ -3125,7 +3143,7 @@ input, select, textarea {
 			height: 101%;
 			padding: 6em 3em;
 			top: 0;
-			width: 40em;
+			width: 45em;
 		}
 
 		.spotlight.left .content {
@@ -3199,6 +3217,11 @@ input, select, textarea {
 	.wrapper {
 		padding: 6em 0 4em 0;
 	}
+
+        .wrapper.style1 {
+            background: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95)), url('../../images/pexels-drew-rae-580679.jpg') no-repeat center center;
+            background-size: cover;
+        }
 
 		.wrapper.style2 {
 			background: #e44c65;

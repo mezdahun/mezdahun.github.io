@@ -2566,6 +2566,28 @@ input, select, textarea {
 			width: 12em;
 		}
 
+		.image.left-large {
+            float: left;
+            margin: 0 1.5em 1em 0;
+            top: 0.25em;
+            width: 25em;
+        }
+
+        .image.right-large {
+            float: right;
+            margin: 0 0 1em 1.5em;
+            top: 0.25em;
+            width: 25em;
+        }
+
+		.image.right-large, .image.left-large {
+            max-width: 60%;
+        }
+
+            .image.left-large img, .image.right-large img {
+                width: 100%;
+            }
+
 		.image.left, .image.right {
 			max-width: 40%;
 		}
@@ -3225,8 +3247,18 @@ input, select, textarea {
             background-size: cover;
         }
 
+        .wrapper.style-cobe {
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('../../images/pexels-bruno-cervera-3062948.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
         .wrapper.style-collforaging {
             background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../../images/pexels-karolina-grabowska-4194842.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        .wrapper.style-vswrm {
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('../../images/pexels-ksenia-chernaya-5691475.jpg') no-repeat center center;
             background-size: cover;
         }
 

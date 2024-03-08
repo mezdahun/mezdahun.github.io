@@ -3252,6 +3252,11 @@ input, select, textarea {
             background-size: cover;
         }
 
+        .wrapper.style-contact {
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('../../images/pexels-karolina-grabowska-4046718.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
         .wrapper.style-collforaging {
             background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../../images/pexels-karolina-grabowska-4194842.jpg') no-repeat center center;
             background-size: cover;

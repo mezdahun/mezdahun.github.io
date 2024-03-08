@@ -3959,11 +3959,11 @@ input, select, textarea {
 			}
 
 				#titleBar .title {
-					color: #ffffff;
+					color: #272833;
 					display: block;
-					font-weight: 300;
-					height: 44px;
-					line-height: 44px;
+					font-weight: 0;
+					height: 0px;
+					line-height: 0px;
 					text-align: center;
 				}
 

@@ -49,25 +49,24 @@
 			<!-- Main -->
 				<div id="main" class="wrapper style-vswrm">
 					<div class="container">
-						<header class="major">
+						<header class="major" title="Background by Ksenia Chernaya">
 							<h2>Visual Swarm (VSWRM)</h2>
 							<p>A purely vision-based decentralized controller for swarming robots</p>
 						</header>
 
 						<!-- Image -->
 							<section>
-
 <!--								<h4>Left &amp; Right</h4>-->
-								<p><span class="image left"><img src="images/pexels-osman-arabacı-19511284.jpg" alt="" />
+								<p><span class="image left" title="Photo by Osman Arabacı"><img src="images/pexels-osman-arabacı-19511284.jpg" alt="" />
 								</span>Collective movement is a widely observed phenomenon in nature. Be it schools of fish,
-								flocks of birds or bands of insects, animals can implement well-coordinated collective movement
+								flocks of birds or swarms of insects, animals can implement well-coordinated collective movement
 								relying only their perception, i.e. the locally available information surrounding them. Current flocking models
 								often rely on, instead of local, global information such as the exact position of conspecifics.
 								How does collective motion arise only from local perception? Is it possible to create a purely
 								vision-based controller for robots that implements similarly coordinated movement?<br><br><br></p>
 
 								<p><span class="image right"><img src="images/3thymios_small.jpg" alt="" />
-								</span> To study this question we implemented a novel vision-based flocking model introduced
+								</span> To study these questions we implemented a novel vision-based flocking model introduced
 								by <a href="https://www.science.org/doi/10.1126/sciadv.aay0792">Bastien and Romanczuk</a> in both
 								simulated agents and in 10 small terrestrial robots. We studied the following:
 								<ul>
@@ -82,27 +81,25 @@
 									the resulting movement patterns, and less visual information sometimes even favors
 									coordinated movement. Combining our findings with limited spaces, on the other hand,
 									always made it more challenging for groups to realize coordinated migrating movement
-									without collisions as in these cases agents are continously perturbed by limiting walls.<br><br>
+									without collisions as in these cases agents are continuously perturbed by limiting walls.<br><br>
 									We also found that the smaller the agents' FOV is the less cohesive the group remains
 									as agents can break away from the group if no other agent is visible.<br><br></p>
 
 								<p><span class="image right-large"><img src="images/vswrmflocking.gif" alt="" />
-								</span> Using our results from simulated agents we could synthesize a vision-based controller
-								for small robots. We found that the controller is able to realize coordinated movement
-								without any centralized control. The robots are able to move together only using their camera stream as input
-								computing all necessary information on board including detecting each other using CNN-based
-								object detection. Decentralized control might provide stark benefits over centralized control
-								in the future. Once robots use only local information they become robuts towards global information jamming (e.g. GPS jamming) or outages.
-								Furthermore, agents do not communicate information wo each other directly, that allows coordinated movement of different types
-								of robots without a compatible communication protocol.<br>
+								</span> Using our results from simulations involving agent-based models, we developed a
+									vision-based controller for small robots. This controller enables the robots to
+									achieve coordinated movement without the need for any centralized control system.
+									The robots can move in unison by solely relying on their camera feeds to process all
+									necessary information on-board, including the detection of each other through CNN-based
+									object detection methods. Decentralized control could offer significant advantages
+									over centralized systems in the future. Robots that rely solely on local information
+									are more resilient to disruptions in global information systems, such as GPS jamming
+									or outages. Moreover, the agents do not require direct communication with each other,
+									facilitating coordinated movements among various types of robots without the need for
+									a compatible communication protocol.<br>
 								<br></p>
 
-<!--								<p>For more information see our recent manuscript here: </p>-->
-<!--								<p>David Mezey, Dominik Deffner, Ralf HJM Kurvers, Pawel Romanczuk <br>-->
-<!--									Visual social information use in collective foraging <br>-->
-<!--									bioRxiv 2023.11.30.569379; doi: <a href="https://doi.org/10.1101/2023.11.30.569379">https://doi.org/10.1101/2023.11.30.569379</a></p>-->
-
-								<p>Manuscript comes soon... </p>
+								<p>Manuscript is coming soon... </p>
 
 								<ul class="icons">
 									<li><a href="https://github.com/mezdahun/VisualSwarm" class="icon brands alt fa-github"><span class="label">GitHub</span></a> Find the Code on GitHub</li>
@@ -113,9 +110,9 @@
 								<h3>Videos</h3>
 								<div class="box alt">
 									<div class="row gtr-50 gtr-uniform">
-										<div class="col-5 col-6-xsmall">
+										<div class="col-12">
 											<div style="position: relative; width: 100%; aspect-ratio: 16 / 9;">
-											  <iframe src="https://drive.google.com/file/d/19rLRXe5_NiukU3VZypSgrcpZoL9mQ8k_/preview" width="640" height="480" allow="autoplay"></iframe>
+											  <iframe src="https://drive.google.com/file/d/19rLRXe5_NiukU3VZypSgrcpZoL9mQ8k_/preview" width="100%" height="100%" allow="autoplay"></iframe>
 											</div>
 										</div>
 

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE HTML>
 <!--
 	Landed by HTML5 UP
@@ -14,13 +12,12 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-preload">
+	<body class="is-preload landing">
 		<div id="page-wrapper">
-
 			<!-- Header -->
 				<header id="header">
-<!--					<h1 id="logo"><a href="index.html">Projects, Collective Foraging</a></h1>-->
-					<nav id="nav">
+<!--					<h1 id="logo"><a href="index.html">Landed</a></h1>-->
+					<nav id="nav" style="font-weight: bold;">
 						<ul>
 							<li><a href="index.html">Home</a></li>
 							<li>
@@ -36,112 +33,177 @@
 					</nav>
 				</header>
 
-			<!-- Main -->
-				<div id="main" class="wrapper style-cobe">
-					<div class="container">
-						<header class="major" title="Background by Bruno Cervera">
-							<h2><b>Co</b>llective <b>Be</b>havior Setup (CoBe)</h2>
-							<p>An augmented reality for humans, robots and simulated agents</p>
+			<!-- One -->
+				<section id="one" class="spotlight style4 left" title="Photo by Harrison Haines">
+					<span class="image fit main"><img src="images/pexels-harrison-haines-3536511.jpg" alt="" /></span>
+					<div class="content" style="width:50%">
+						<header>
+							<h2>CoBe : Collective Behavior</h2>
 						</header>
-
-						<!-- Image -->
-							<section>
-								<p><span class="image left-large" title="Photo by Harrison Haines"><img src="images/pexels-harrison-haines-3536511.jpg" alt="" />
-								</span>Collective behavior is often studied across various scales and environments, using both mathematical models with subsequent
+						<p style="font-size:large; font-weight:bold;">Collective behavior is often studied across various scales and environments, using both mathematical models with subsequent
 									agent-based simulations and observations of biological agents.
-									Motivated by synthetic collective intelligence, these models serve as a foundation for designing artificial agents, such as robots.
+									<br><br>Motivated by synthetic collective intelligence, these models serve as a foundation for designing artificial agents, such as robots.
 									These agents are used to test the model's robustness in the physical world and to achieve practical applications.
-									Throughout this workflow,
-									numerous environmental gaps emerge that must be bridged: from observations of animals in the physical world to simulated agents, and then back
+									<br><br>Throughout this workflow, numerous environmental gaps emerge that must be bridged: from observations of animals in the physical world to simulated agents, and then back
 									to the physical world with robotic agents. CoBe is a platform designed to bridge these gaps by providing a unified environment for
-									humans, simulated agents, and robots to explore the role of embodiment in collective behavior. <br><br><br></p>
+									humans, simulated agents, and robots to explore the role of embodiment in collective behavior.</p>
+
+						<ul class="actions">
+							<li><a href="#two" class="button scrolly">Next</a></li>
+						</ul>
+					</div>
+					<a href="#two" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Three -->
+				<section id="two" class="spotlight style3 right">
+					<span class="image fit main bottom"><img src="images/cobe_prof_fish.jpg"/></span>
+					<div class="content" style="width:50%">
+						<header>
+							<h2>CoBe : AR for humans</h2>
+						</header>
+						<p style="font-size:large; font-weight:bold;">CoBe is an augmented reality (AR) setup designed by <a href="https://www.linkedin.com/in/david-mezey/">David Mezey</a>,
+							<a href="https://www.scienceofintelligence.de/people/palina-bartashevich/">Dr. Palina Bartashevich</a> and
+							<a href="https://de.linkedin.com/in/davidjohjames">David James</a> with support of the
+							<a href="https://www.scienceofintelligence.de/">Science of Intelligence</a> Cluster. It is a platform to connect simulated and physical worlds.
+
+							<br><br>CoBe is a set of projectors and cameras spatially distributed on a scaffold around an active arena
+							all connected through a controller station. CoBe detects dedicated objects, adjusts the underlying simulation environment
+							based on their positions, and projects these changes back into the arena, creating a dynamic, interactive space.
+							CoBe can be flexibly modified to detect any object and run any real-time simulation defining the environment to be
+							projected.
+
+							<br><br>In its default mode CoBe runs a computational model by <a href="https://www.scienceofintelligence.de/people/palina-bartashevich/">Dr. Palina Bartashevich</a> exploring predator-prey
+							interactions in simulated groups of fish. CoBe projects a school of virtual fish that move within
+							the arena. Humans can interact with the group of prey via a special staff representing a predator for the virtual
+							fish, to which they react with collective escape behavior also exhibited by real fish. Thus one or
+							multiple humans can act as predator(s) in the system and try to control the fish school.
+
+						<ul class="actions">
+							<li><a href="#three" class="button scrolly">Next</a></li>
+							<li><a href="https://drive.google.com/file/d/1wLiBsr6HMULzgANk9OU3oM1HCKZjSom8/preview" class="button">Watch CoBe in Action</a></li>
+							<li><a href="https://www.youtube.com/watch?v=cHgTKhd98d4" class="button">About Palina's Work</a></li>
+						</ul>
+					</div>
+					<a href="#three" class="goto-next scrolly">Next</a>
+				</section>
+
+				<section id="three" class="spotlight style2 left">
+					<span class="image fit main bottom"><img src="images/cobe_robot_fountain.jpg"/></span>
+					<div class="content" style="width:50%">
+						<header>
+							<h2>CoBe : AR for robots</h2>
+						</header>
+						<p style="font-size:large; font-weight:bold;">CoBe also supports Thymio II robots providing a unique tool in the ongoing and future projects of <a href="https://www.linkedin.com/in/david-mezey/">David Mezey</a>. In this case robots can
+							sense the projected fish swarm either via their cameras (decentralized) or via a central
+							information node (centralized position coordinates). The robots then can behave in the physical world
+							interacting with the simulated fish.
+							<br><br>By integrating robots in CoBe we have the unique possibility to bridge the gap between
+							simulated and physical agents, and among others, (1) to study the differences between centralized and decentralized control,
+							(2) to quantify the effect of perceptual noise on agent behavior or (3) to explore
+							the effect of physical constraints such as movement limitations coming from the embodiment of agents. Furthermore
+							<br><br>CoBe can also simplify experimentation with robot collectives. In our case, from the 2 different types of agents (predators
+							and prey) we only need to physically engineer one of them keeping the problem tractable.
+						<ul class="actions">
+							<li><a href="#four" class="button scrolly">Next</a></li>
+							<li><a href="https://drive.google.com/file/d/1KYanGKSDzJPXWp0W6z0URZ-FDtuXoJTQ/preview" class="button">Watch CoBe with Robots</a></li>
+							<li><a href="https://www.scienceofintelligence.de/people/david-mezey/" class="button">About David's Work</a></li>
+					</ul>
+					</div>
+					<a href="#four" class="goto-next scrolly">Next</a>
+				</section>
+
+				<section id="four" class="spotlight style2 right">
+					<span class="image fit main bottom"><img src="images/cobefish_large.png"/></span>
+					<div class="content" style="width:50%">
+						<header>
+							<h2>CoBe : AR stands for art</h2>
+						</header>
+						<p style="font-size:large; font-weight:bold;">As a tool for scientific communication,
+							CoBe incorporates multiple artistic elements. The fish in the school are individually animated
+							by <a href="https://de.linkedin.com/in/davidjohjames">David James</a>, adding dynamism to the visualization.
+							<br><br>Moreover, the background music, specifically composed for CoBe by <a href="https://www.muizyu.com/"> Mui Zyu</a> and <a href="https://de.linkedin.com/in/natalie-szende-3b4b99229"> Natalie Szende</a>, enhances the audiovisual experience.
+							This collaboration aims to create an immersive environment that bridges science and art, inviting
+							deeper engagement with the simulated ecosystem.
+
+						<ul class="actions">
+							<li><a href="#three" class="button scrolly">Next</a></li>
+						</ul>
+					</div>
+					<a href="#four" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Four -->
+
+<!--			&lt;!&ndash; Five &ndash;&gt;-->
+<!--				<section id="five" class="wrapper style2 special fade">-->
+<!--					<div class="container">-->
+<!--						<header>-->
+<!--							<h2>Magna faucibus lorem diam</h2>-->
+<!--							<p>Ante metus praesent faucibus ante integer id accumsan eleifend</p>-->
+<!--						</header>-->
+<!--						<form method="post" action="#" class="cta">-->
+<!--							<div class="row gtr-uniform gtr-50">-->
+<!--								<div class="col-8 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>-->
+<!--								<div class="col-4 col-12-xsmall"><input type="submit" value="Get Started" class="fit primary" /></div>-->
+<!--							</div>-->
+<!--						</form>-->
+<!--					</div>-->
+<!--				</section>-->
 
 
-								<p><span class="image right-large"><img src="images/cobehuman.jpg" alt="" />
-								</span> CoBe is an augmented reality setup to connect simulated and physical worlds. It is a set of projectors and cameras
-									spatially distributed on a scaffold around an active arena
-									connected via a controller station. CoBe detects dedicated objects, adjusts the underlying simulation environment
-									based on their positions, and projects these changes back into the arena, creating a dynamic, interactive space.
-									CoBe can be flexibly modified to detect any object and run any real-time simulation defining the environment to be
-									projected.
-									In its default mode CoBe runs the computational model of <a href="https://www.scienceofintelligence.de/people/palina-bartashevich/">Dr. Palina Bartashevich</a> exploring predator-prey
-									interactions in simulated groups of fish. Consequently CoBe projects a school of virtual fish that move within
-									the arena. Humans can interact with the group of prey via a special staff representing a predator for the virtual
-									fish, to which they react with collective escape behavior also exhibited by real fish. Thus a human or
-									multiple humans can act as predator(s) in the system and try to control the fish school.
-								<br></p>
+			<section id="projs" class="wrapper style1 special fade-up">
+					<h3>Videos</h3>
+					<div class="container">
+<!--						<header class="major">-->
+<!--							<h2>Accumsan sed tempus adipiscing blandit</h2>-->
+<!--							<p>Iaculis ac volutpat vis non enim gravida nisi faucibus posuere arcu consequat</p>-->
+<!--						</header>-->
+						<div class="box alt">
+							<div class="row gtr-uniform">
+								<section class="col-4 col-6-medium col-12-xsmall">
+									<span class="small-size"><a href="https://drive.google.com/file/d/1wLiBsr6HMULzgANk9OU3oM1HCKZjSom8/preview"><img src="images/cobe_prof_fish_square.jpg" alt="" /></a></span>
+									<a href="https://drive.google.com/file/d/1wLiBsr6HMULzgANk9OU3oM1HCKZjSom8/preview"><h3>CoBe : Humans</h3></a>
+									<p>A pair of humans chasing "fish"</p>
+								</section>
+								<section class="col-4 col-6-medium col-12-xsmall">
+									<span class="small-size"><a href="https://drive.google.com/file/d/1KYanGKSDzJPXWp0W6z0URZ-FDtuXoJTQ/preview"><img src="images/cobe_robot_fountain_square.png" alt=""/></a></span>
+									<a href="https://drive.google.com/file/d/1KYanGKSDzJPXWp0W6z0URZ-FDtuXoJTQ/preview"><h3>CoBe : Robots</h3></a>
+									<p>A pair of robots chasing "fish"</p>
+								</section>
+							</div>
+						</div>
+<!--						<footer class="major">-->
+<!--							<ul class="actions special">-->
+<!--								<li><a href="#" class="button">Magna sed feugiat</a></li>-->
+<!--							</ul>-->
+<!--						</footer>-->
+					</div>
+				</section>
 
-								<p><span class="image left-large"><img src="images/cobethymio.png" alt="" />
-								</span>The system has been extended to support Thymio II robots. In this case robots can
-									sense the projected fish swarm either via their cameras (decentralized) or via a central
-									information node (centralized position coordinates). The robots then can behave in the physical world
-									interacting with the simulated fish.
-									By integrating robots in CoBe we have the
-									unique possibility to bridge the gap between simulated and physical agents, and,
-									among others, (1) to study the differences between centralized and decentralized control,
-									(2) to quantify the effect of perceptual noise on agent behavior or (3) to explore
-									the effect of physical constraints such as movement limitations coming from the embodiment of agents. Furthermore
-									CoBe can also simplify experimentation with robot collectives. In our case, from the 2 different types of agents (predators
-									and prey) we only need to physically engineer one of them keeping the problem tractable.</p>
-
-								<p><span class="image right-large" title="Design by David James"><img src="images/cobefish.jpg" alt="" />
-								</span>
-									CoBe also serves as a tool for scientific outreach. The visualization of simulated fish was inspired
-									by observations from the Gulf of Mexico, where the interactions between blue marlins and
-									mackerels inspired the underlying mathematical model. As a tool for scientific communication,
-									CoBe incorporates multiple artistic elements. The fish in the school are individually animated
-									by <a href="https://de.linkedin.com/in/davidjohjames">David James</a>, adding dynamism to the visualization.
-									Moreover, the background music, specifically composed for CoBe by <a href="https://www.muizyu.com/"> Mui Zyu</a> and <a href="https://de.linkedin.com/in/natalie-szende-3b4b99229"> Natalie Szende</a>, enhances the audiovisual experience.
-									This collaboration aims to create an immersive environment that bridges science and art, inviting
-									deeper engagement with the simulated ecosystem.
-
-								<br><br><br><br><br><br><br><br></p>
-
-
-
-								<div class="box alt">
-									<div class="row gtr-50 gtr-uniform">
-										<div class="col-2"></div>
-										<div class="col-8"><span class="image fit" width="50%"><img src="images/wearecobe2.jpg" alt="" /></span></div>
-										<div class="col-2"></div>
-									</div>
-								</div>
-
-
-								<div class="box alt">
-									<div class="row gtr-50 gtr-uniform">
-										<div class="col-2"></div>
-										<div class="col-8">
-											<ul class="icons">
-												<li><a href="https://github.com/mezdahun/CoBe" class="icon brands alt fa-github"><span class="label">GitHub</span></a> Find the Code on GitHub</li>
-											</ul>
-										</div>
-										<div class="col-2"></div>
-									</div>
-								</div>
-
-
-								<h3>Videos</h3>
-								<div class="box alt">
-									<div class="row gtr-100 gtr-uniform">
-										<div class="col-6">
-											<div style="position: relative; width: 100%; aspect-ratio: 4 / 3;">
-											  <iframe src="https://drive.google.com/file/d/1wLiBsr6HMULzgANk9OU3oM1HCKZjSom8/preview" width="100%" height="100%" allow="autoplay"></iframe>
-											</div>
-										</div>
-										<div class="col-6">
-											<div style="position: relative; width: 100%; aspect-ratio: 4 / 3;">
-											  <iframe src="https://drive.google.com/file/d/1KYanGKSDzJPXWp0W6z0URZ-FDtuXoJTQ/preview" width="100%" height="100%" allow="autoplay"></iframe>
-										</div>
-
-									</div>
-								</div>
-							</section>
-
+			<section width="80%">
+				<div class="box alt">
+					<div class="row gtr-50 gtr-uniform">
+						<div class="col-1"></div>
+						<div class="col-10"><span class="image fit" width="100%"><img src="images/wearecobe2.jpg" alt="" /></span></div>
+						<div class="col-1"></div>
 					</div>
 				</div>
+			</section>
+
+
 
 			<!-- Footer -->
+				<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/david-mezey/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/mezdahun" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="mailto:mezeydavid@gmail.com?subject=Hello" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					<ul class="copyright">
+						<li>&copy; David Mezey. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
 
 		</div>
 

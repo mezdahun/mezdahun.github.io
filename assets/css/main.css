@@ -3266,6 +3266,12 @@ input, select, textarea {
             background-size: cover;
         }
 
+        .wrapper.style-course {
+            background: white;
+            padding: 1em 1em 1em 1em;
+            color:black;
+        }
+
         .wrapper.style-vswrm {
             background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('../../images/pexels-ksenia-chernaya-5691475.jpg') no-repeat center center;
             background-size: cover;
@@ -3866,6 +3872,11 @@ input, select, textarea {
 
 			header.major {
 				margin: 0 0 2em 0;
+			}
+
+            header.course {
+				margin: 0 0 1em 0;
+				color: black;
 			}
 
 		/* Goto Next */

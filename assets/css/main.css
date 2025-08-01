@@ -4446,3 +4446,41 @@ body {
 					}
 
 	}
+
+@media screen and (max-width: 600px) {
+  .row {
+    margin-left: -5em;
+    margin-right: -5em;
+  }
+
+  .row > * {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  .bannerstyle .content header h2 {
+    font-size: 1.8em !important;
+    line-height: 1.8em !important;
+    margin-left: -1em !important;
+    margin-right: -1em !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0.5em;
+    text-align: center;
+}
+
+  #media_cobe,
+  #linkedin_cobe {
+    padding-left: 4.25em;
+    padding-right: 4.25em;
+    margin-left: 0em;
+    margin-right: 0em;
+  }
+
+  .bannerstyle .content section header h3 {
+    margin-left: -3.75em;
+    margin-right: -3.75em;
+    }
+}
+
+}

@@ -1,6 +1,13 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,100italic,300italic");
 
+:root {
+  --accent-color: #27592D;
+  --accent-hover-color: #4d7f53;
+  --accent-active-color: #013307;
+  --accent-link-color: #6eb577;
+}
+
 /*
 	Landed by HTML5 UP
 	html5up.net | @ajlkn
@@ -72,6 +79,166 @@ input, select, textarea {
 	appearance: none;
 }
 
+.blur-box {
+  background: rgba(255, 255, 255, 0.07); /* subtle white layer */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(8px); /* for Safari */
+  border-radius: 0.75em;
+  padding: 3em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.blur-inline {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 0.5em;
+  padding: 0.25em 0.75em;
+  display: inline-block;
+  color: white;
+  font-weight: 500;
+  margin: 0em;
+  flex-grow:1;
+}
+
+.logo-text {
+  margin-left: 1em;
+  color: white; /* Or whatever color matches your header */
+  font-weight: 500;
+}
+
+  .skills-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75em;
+    justify-content: space-between;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 2em 0;
+  }
+
+  .skill-card {
+    flex: 1 1 220px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: white;
+    border-radius: 0.5em;
+    padding: 0.75em;
+    font-size: 0.95em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+  }
+
+  .skill-card span {
+    font-size: 1.2em;
+    line-height: 1;
+  }
+
+Got it. Based on the screenshot, you want the highlight to be a full-width bar that is vertically centered within the card.
+
+That's an easy fix! This effect is achieved by making the content container span the full width of the card. Here is the updated CSS code to do just that. The HTML does not need to be changed.
+
+Updated CSS
+Simply replace your old CSS with this new block. I've added comments to highlight exactly what was changed.
+
+CSS
+
+/*
+ * Google Fonts: Optional, but recommended for a nicer look.
+ * Import at the top of your CSS file.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f2f5; /* A light background to make cards pop */
+  padding: 2rem;
+}
+
+/* 1. Grid Container */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0em
+}
+
+/* 2. Individual Card */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  min-height: 250px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* This flex layout now primarily handles vertical centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* 3. Card Background Image */
+.card-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-size: cover;
+  background-position: center;
+
+  filter: blur(4px) brightness(0.6);
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+}
+
+/* 4. Card Content (Title & Description) */
+.card-content {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  padding: 1.5rem 2rem; /* Vertical and horizontal padding for the text */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0); /* Start fully transparent */
+
+  /* --- CHANGED --- */
+  /* 1. Make the content block span the full card width */
+  width: 100%;
+  /* 2. Transition only the background for a cleaner effect */
+  transition: background-color 0.5s ease;
+}
+
+.card-content h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* --- HOVER STATE --- */
+.project-card:hover .card-background {
+  filter: blur(0) brightness(1);
+  transform: scale(1);
+}
+
+.project-card:hover .card-content {
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black highlight */
+}
+
+
 /* Basic */
 
 	html {
@@ -111,12 +278,12 @@ input, select, textarea {
 		-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		border-bottom: dotted 1px;
-		color: #e44c65;
+		color: var(--accent-link-color);
 		text-decoration: none;
 	}
 
 		a:hover {
-			color: #e44c65 !important;
+			color: var(--accent-hover-color) !important;
 			border-bottom-color: transparent;
 		}
 
@@ -684,7 +851,7 @@ input, select, textarea {
 	.row {
 		display: flex;
 		flex-wrap: wrap;
-		box-sizing: border-box;
+        box-sizing: border-box;
 		align-items: stretch;
 	}
 
@@ -2186,7 +2353,7 @@ input, select, textarea {
 	}
 
 		header.major:after {
-			background: #e44c65;
+			background: var(--accent-color);
 			content: '';
 			display: inline-block;
 			height: 0.2em;
@@ -2255,7 +2422,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #e44c65;
+			border-color: var(--accent-color);
 		}
 
 	select {
@@ -2358,7 +2525,7 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #e44c65;
+			border-color: var(--accent-color);
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2874,9 +3041,12 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-		background-color: transparent;
+		background-color: rgba(255, 255, 255, 0.1);
 		border-radius: 4px;
 		border: 0;
+		backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        transition: background-color 0.3s ease, color 0.3s ease;
 		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
 		color: #ffffff !important;
 		cursor: pointer;
@@ -2897,8 +3067,9 @@ input, select, textarea {
 		input[type="button"]:active,
 		.button:hover,
 		.button:active {
-			box-shadow: inset 0 0 0 1px #e44c65;
-			color: #e44c65 !important;
+			box-shadow: inset 0 0 0 1px var(--accent-color);
+			color: #ffffff !important;
+			background-color: rgba(255, 255, 255, 0.4);
 		}
 
 		input[type="submit"]:active,
@@ -2940,7 +3111,7 @@ input, select, textarea {
 		input[type="reset"].primary,
 		input[type="button"].primary,
 		.button.primary {
-			background-color: #e44c65;
+			background-color: var(--accent-color);
 			box-shadow: none;
 			color: #ffffff !important;
 		}
@@ -2949,14 +3120,14 @@ input, select, textarea {
 			input[type="reset"].primary:hover,
 			input[type="button"].primary:hover,
 			.button.primary:hover {
-				background-color: #e76278;
+				background-color: var(--accent-hover-color);
 			}
 
 			input[type="submit"].primary:active,
 			input[type="reset"].primary:active,
 			input[type="button"].primary:active,
 			.button.primary:active {
-				background-color: #e13652;
+				background-color: var(--accent-active-color);
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -3181,7 +3352,7 @@ input, select, textarea {
 		}
 
 		.spotlight.style1 .content {
-			border-color: #e44c65;
+			border-color: var(--accent-color);
 		}
 
 		.spotlight.style2 .content {
@@ -3278,7 +3449,7 @@ input, select, textarea {
         }
 
 		.wrapper.style2 {
-			background: #e44c65;
+			background: var(--accent-color);
 		}
 
 			.wrapper.style2 input[type="text"]:focus,
@@ -3313,7 +3484,7 @@ input, select, textarea {
 			.wrapper.style2 input[type="button"].primary,
 			.wrapper.style2 .button.primary {
 				background-color: #ffffff;
-				color: #e44c65 !important;
+				color: var(--accent-color) !important;
 			}
 
 				.wrapper.style2 input[type="submit"].primary:hover, .wrapper.style2 input[type="submit"].primary:active,
@@ -3417,7 +3588,7 @@ input, select, textarea {
 			}
 
 			.dropotron > li.active > a, .dropotron > li.active > span {
-				color: #e44c65;
+				color: var(--accent-color);
 			}
 
 		.dropotron.level-0 {
@@ -3507,7 +3678,7 @@ input, select, textarea {
 						}
 
 					#header nav ul li.active > a, #header nav ul li.active > span {
-						color: #e44c65;
+						color: var(--accent-color);
 					}
 
 					#header nav ul li > ul {
@@ -3524,12 +3695,95 @@ input, select, textarea {
 		position: absolute;
 	}
 
+
+.bannerstyle {
+		background-attachment: fixed;
+		background-color: #272833;
+		background-image: url("../../images/moss.jpg");
+		background-position: center center;
+		background-size: cover;
+		box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+		min-height: 100vh;
+		position: relative;
+		text-align: center;
+		z-index: 21;
+	}
+
+		.bannerstyle:before {
+			content: '';
+			display: inline-block;
+			height: 100vh;
+			vertical-align: middle;
+			width: 1%;
+		}
+
+		.bannerstyle:after {
+			background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.5), rgba(23, 24, 32, 0.5)), url("images/overlay.png");;
+			background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.5), rgba(23, 24, 32, 0.5)), url("images/overlay.png");;
+			background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.5), rgba(23, 24, 32, 0.5)), url("images/overlay.png");;
+			background-image: linear-gradient(top, rgba(23, 24, 32, 0.5), rgba(23, 24, 32, 0.5)), url("images/overlay.png");;
+			content: '';
+			display: block;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+
+		.bannerstyle .content {
+			display: inline-block;
+			margin-right: 1%;
+			margin-left: 1%;
+			max-width: 95%;
+			padding: 6em;
+			position: relative;
+			text-align: left;
+			vertical-align: middle;
+			z-index: 1;
+		}
+
+			.bannerstyle .content header {
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+				.bannerstyle .content header h2 {
+					font-size: 2.5em;
+					margin: 0;
+				}
+
+				.bannerstyle .content header p {
+					margin: 0.5em 0 0 0;
+					top: 0;
+				}
+
+			.bannerstyle .content .image {
+				border-radius: 100%;
+				display: inline-block;
+				height: 18em;
+				margin-right: 3em;
+				vertical-align: middle;
+				width: 18em;
+			}
+
+				.bannerstyle .content .image img {
+					border-radius: 100%;
+					display: block;
+					width: 100%;
+				}
+
+	body.is-touch .bannerstyle {
+		background-attachment: scroll;
+	}
+
+
 /* Banner */
 
 	#banner {
 		background-attachment: fixed;
 		background-color: #272833;
-		background-image: url("../../images/pexels-drew-rae-580679.jpg");
+		background-image: url("../../images/moss.jpg");
 		background-position: center center;
 		background-size: cover;
 		box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
@@ -3564,10 +3818,11 @@ input, select, textarea {
 		#banner .content {
 			display: inline-block;
 			margin-right: 1%;
+			margin-left: 1%;
 			max-width: 95%;
 			padding: 6em;
 			position: relative;
-			text-align: right;
+			text-align: left;
 			vertical-align: middle;
 			z-index: 1;
 		}
@@ -3591,7 +3846,7 @@ input, select, textarea {
 				border-radius: 100%;
 				display: inline-block;
 				height: 18em;
-				margin-left: 3em;
+				margin-right: 3em;
 				vertical-align: middle;
 				width: 18em;
 			}
@@ -4012,7 +4267,7 @@ input, select, textarea {
 					}
 
 					#titleBar .toggle:before {
-						background: #e44c65;
+						background: var(--accent-color);
 						color: rgba(255, 255, 255, 0.5);
 						content: '\f0c9';
 						display: block;

@@ -80,9 +80,9 @@ input, select, textarea {
 }
 
 .blur-box {
-  background: rgba(255, 255, 255, 0.07); /* subtle white layer */
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(8px); /* for Safari */
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(10px); /* for Safari */
   border-radius: 0.75em;
   padding: 3em;
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
@@ -91,10 +91,10 @@ input, select, textarea {
 }
 
 .blur-inline {
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border-radius: 0.5em;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 0.75em;
   padding: 0.25em 0.75em;
   display: inline-block;
   color: white;
@@ -121,9 +121,9 @@ input, select, textarea {
 
   .skill-card {
     flex: 1 1 220px;
-    background: rgba(255, 255, 255, 0.07);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
     color: white;
     border-radius: 0.5em;
     padding: 0.75em;
@@ -280,11 +280,13 @@ body {
 		border-bottom: dotted 1px;
 		color: var(--accent-link-color);
 		text-decoration: none;
+		border-bottom: none !important;
 	}
 
 		a:hover {
 			color: var(--accent-hover-color) !important;
 			border-bottom-color: transparent;
+			border-bottom: none !important;
 		}
 
 	strong, b {
@@ -3041,13 +3043,13 @@ body {
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-		background-color: rgba(255, 255, 255, 0.1);
-		border-radius: 4px;
+		background: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(10px);
+		border-radius: 7.5px;
 		border: 0;
-		backdrop-filter: blur(2px);
-        -webkit-backdrop-filter: blur(2px);
         transition: background-color 0.3s ease, color 0.3s ease;
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+		box-shadow: inset 0 0 0 0px rgba(0, 0, 0, 0.35);
 		color: #ffffff !important;
 		cursor: pointer;
 		display: inline-block;

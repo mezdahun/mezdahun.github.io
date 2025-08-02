@@ -3971,6 +3971,7 @@ body {
 
 			#banner .content {
 				padding: 4.5em;
+				text-align: center;
 			}
 
 		/* Footer */
@@ -4053,7 +4054,7 @@ body {
 				}
 
 				#banner .content {
-					padding: 9em 0;
+					padding: 4.5em 0;
 					text-align: center;
 				}
 
@@ -4181,7 +4182,7 @@ body {
 				}
 
 				#banner .content {
-					padding: 4.0625em 1.5em 4.875em 1.5em;
+					padding: 2em 1.5em 4.875em 1.5em;
 				}
 
 					#banner .content header h2 {
@@ -4189,8 +4190,8 @@ body {
 					}
 
 					#banner .content .image {
-						height: 9em;
-						width: 9em;
+						height: 12em;
+						width: 12em;
 					}
 
 		/* Nav */
@@ -4425,7 +4426,7 @@ body {
 		/* Banner */
 
 			#banner .content {
-				padding: 3em 1.5625em 5.25em 1.5625em;
+				padding: 2em 1.5625em 5.25em 1.5625em;
 			}
 
 		/* Footer */
@@ -4447,82 +4448,49 @@ body {
 
 	}
 
+.project-grid > a,
+.project-grid > a:hover,
+.project-grid > a:active {
+  border-bottom: none !important;   /* no dotted line */
+}
+
+/* --- force hover style on touch screens --- */
+@media (hover: none) and (pointer: coarse) {
+  .project-card .card-background {
+    filter: blur(0) brightness(1);
+    transform: scale(1);
+  }
+  .project-card .card-content {
+    background-color: rgba(0,0,0,0.4);
+  }
+
+  body.is-touch .spotlight,
+  body.is-touch .bannerstyle,
+  body.is-touch #banner {
+    background-attachment: fixed;
+  }
+}
+
 @media screen and (max-width: 600px) {
-  .row {
-    margin-left: -5em;
-    margin-right: -5em;
+    .bannerstyle .content {
+    padding: 1em 0.5em 3em 0.5em;
+    }
+
+    .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: stretch;
   }
 
-  .row > * {
-    padding-left: 1em;
-    padding-right: 1em;
+  .cta-buttons .button {
+    width: 100%;
+    text-align: center;
   }
 
-  .bannerstyle .content header h2 {
-    font-size: 1.8em !important;
-    line-height: 1.8em !important;
-    margin-left: -2em !important;
-    margin-right: -1em !important;
-    padding-left: -2em !important;
-    padding-right: 0 !important;
-    padding-bottom: 0.5em;
-    text-align: left;
 }
 
-    .bannerstyle .content header ul {
-      padding-left: 2em;
-      margin-left: -5em;
-      margin-right: -5em;
-      text-align: left;
-    }
 
-    #three .content {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-    }
-
-    #three .row {
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      padding-left: 1em;
-        padding-right: 1em;
-    }
-
-    #three .row > * {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-    }
-
-    #three .content header h2 {
-      font-size: 1.8em !important;
-      line-height: 1.8em !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      padding-left: 1em !important;
-      padding-right: 1 !important;
-      padding-bottom: 0.5em;
-      text-align: center;
-    }
-
-    #three .skills-section {
-      padding-left: 1em;
-      padding-right: 1em;
-    }
-
-  #media_cobe,
-  #linkedin_cobe {
-    padding-left: 4.25em;
-    padding-right: 4.25em;
-    margin-left: 0em;
-    margin-right: 0em;
-  }
-
-  .bannerstyle .content section header h3 {
-    margin-left: -3.75em;
-    margin-right: -3.75em;
-    }
-}
-
+#profile-pic-home {
+margin: 0 1em 1em 2em !important;
 }

@@ -165,6 +165,70 @@
       padding-left: 24px;
       padding-right: 24px;
     }
+
+      .footer-link {
+        cursor: pointer;
+        color: var(--accent);
+        margin: 0 8px;
+      }
+
+      /* Overlay covers the whole screen */
+        #popupOverlay {
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.35);
+          display: none; /* shown by JS */
+          z-index: 9999;
+          opacity: 1;
+          transition: opacity 0.3s ease;
+        }
+
+        /* Modal box centered on screen */
+        #popupModal {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: min(92vw, 720px);
+          max-height: min(85vh, 900px);
+          overflow: auto;
+          background: rgba(255, 255, 255, 0.92);
+          -webkit-backdrop-filter: saturate(110%) blur(2px);
+          backdrop-filter: saturate(110%) blur(2px);
+          border-radius: 16px;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 2px 10px rgba(0, 0, 0, 0.1);
+          padding: 20px 24px 24px;
+          z-index: 10000; /* above overlay */
+          opacity: 1;
+          transition: opacity 0.3s ease;
+        }
+
+        /* Close button in the top right of the modal */
+        #popupClose {
+          position: sticky;
+          top: 0;
+          margin-left: auto;
+          display: block;
+          align-items: center;
+          justify-content: center;
+          width: 34px;
+          height: 34px;
+          border: 0;
+          border-radius: 10px;
+          background: rgba(0, 0, 0, 0.06);
+          cursor: pointer;
+        }
+
+        #popupClose:hover { background: rgba(0, 0, 0, 0.12); }
+        #popupClose:focus { outline: 2px solid #3b82f6; outline-offset: 2px; }
+
+        /* Content styles */
+        #popupContent {
+          margin-top: 10px;
+          color: #0f172a;
+          line-height: 1.55;
+        }
+
   </style>
 </head>
 <body>
@@ -234,6 +298,22 @@
       </div>
     </section>
 
+  </main>
+
+    <footer style="text-align:center; margin-top:40px;">
+      <span class="footer-link" data-popup="impressum">Impressum</span> |
+      <span class="footer-link" data-popup="privacy">Data Privacy</span> |
+      <span class="footer-link" data-popup="terms">Terms and Conditions</span>
+    </footer>
+
+    <!-- Popups -->
+    <div class="popup-overlay" id="popupOverlay" style="display:none;">
+      <div class="popup-modal" id="popupModal">
+        <button class="popup-close" id="popupClose" aria-label="Close">&times;</button>
+        <div id="popupContent"></div>
+      </div>
+    </div>
+
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script>
@@ -302,5 +382,102 @@
       }
     });
   </script>
+    <script>
+    (function () {
+      // --- Content map (edit to your actual content/HTML) ---
+      const POPUP_HTML = {
+        impressum: `<h3>Impressum</h3><p>reframe was developed by <a href="https://mezdahun.github.io" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; text-decoration-color: #16a34a; text-underline-offset: 2px;">David Mezey</a>, a software engineer based in Berlin, Germany. You can contact the developers using this <a href="https://mezdahun.github.io/contact.html" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; text-decoration-color: #16a34a; text-underline-offset: 2px;">contact form.</a>`,
+privacy: `<h3>Data Privacy</h3><p><h3>🔐️ Data Processing Agreement</h3><br>reFrame processes your input using third-party services, that is OpenAI's language models API. By using reFrame, you consent to the
+        processing of your data by these third-party services in accordance with their respective privacy policies. Please review OpenAI's <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; text-decoration-color: #16a34a; text-underline-offset: 2px;">Privacy Policy</a> and <a href="https://openai.com/policies/terms-of-use" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; text-decoration-color: #16a34a; text-underline-offset: 2px;">Terms of Use</a> for more information on how they handle your data.
+        We do not store or share your input data beyond what is necessary for the operation of the service. Note, that reFrame uses OpenAI's logging services to store your submitted stories for later improvement. These are anonymized and not linked to your user profile.
+        Please do not submit any sensitive personal information that can be used to identify you or others. You are solely responsible for the content you submit and any consequences that may arise from it.
+        <br><br>
+        Furthermore, we use Simple Analytics
+        (<a href="https://simpleanalytics.com/privacy" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; text-decoration-color: #16a34a; text-underline-offset: 2px;">learn more</a>) to collect anonymous usage statistics to help us improve the tool, fully respecting
+        GDPR and CCPA regulations. We do not track or store any personal information for marketing or advertising purposes. Depending on your chosen authentication method you may also be subject to the privacy policies of third-party authentication providers, such as Google or GitHub.
+        Please review their policies for more information on how they handle your data. Once authenticated we keep your user profile (email, name) and the number of credits used in our database, but we do not save any of your past reframing sessions.
+        You can delete your account at any time to remove your data from our systems using the "Delete Account" button in the user menu. When you delete your account, we remove all personal information associated with it, such as your name, photo, and other user settings. To prevent misuse of our service,
+        we retain a minimal, pseudonymized record of your email address and your used credits. This record is stored in the form of a cryptographic hash, which cannot be used to reconstruct your data. The sole purpose of this
+        processing is to ensure fair use of our service. The legal basis for this is our legitimate interest under Art. 6(1)(f) GDPR. If you have any questions or concerns about how your data is handled, please contact us.
+        By accepting these terms, you acknowledge that you have read and understood this disclaimer and data processing agreement and agree to use reFrame in accordance with these terms.</p></p>`,
+terms: `<h1>📑 Terms & Conditions</h1><br>
+        <h3>⚠️ Disclaimer</h3><br>reFrame uses large language models to process your information. While we strive to ensure the accuracy and reliability of the tool, it is important to
+        understand that language models can make mistakes and reFrame is not a substitute for professional mental health care. The reframing suggestions provided by reFrame are generated
+        based on patterns in data and may not always be appropriate or effective for every individual or situation. If you are experiencing significant distress, anxiety, depression, or
+        any other mental health concerns, we strongly recommend seeking help from a qualified mental health professional. Your well-being is our priority, and we encourage you to use
+        reFrame as a supplementary tool rather than a primary source of support. You can find a list of emergency hotlines near you <a href="https://findahelpline.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; text-decoration-color: #16a34a; text-underline-offset: 2px;">here</a>.
+        By submitting your input you recognize that reFrame is not a medical or psychological service and agree to use it at your own risk. Furthermore, you agree, to indemnify and hold harmless the developers of reFrame
+        from any claims, damages, or liabilities arising from your use of the tool.<br><br>
+        <h3>🔐️ Data Processing Agreement</h3><br>reFrame processes your input using third-party services, that is OpenAI's language models API. By using reFrame, you consent to the
+        processing of your data by these third-party services in accordance with their respective privacy policies. Please review OpenAI's <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; text-decoration-color: #16a34a; text-underline-offset: 2px;">Privacy Policy</a> and <a href="https://openai.com/policies/terms-of-use" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; text-decoration-color: #16a34a; text-underline-offset: 2px;">Terms of Use</a> for more information on how they handle your data.
+        We do not store or share your input data beyond what is necessary for the operation of the service. Note, that reFrame uses OpenAI's logging services to store your submitted stories for later improvement. These are anonymized and not linked to your user profile.
+        Please do not submit any sensitive personal information that can be used to identify you or others. You are solely responsible for the content you submit and any consequences that may arise from it.
+        <br><br>
+        Furthermore, we use Simple Analytics
+        (<a href="https://simpleanalytics.com/privacy" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; text-decoration-color: #16a34a; text-underline-offset: 2px;">learn more</a>) to collect anonymous usage statistics to help us improve the tool, fully respecting
+        GDPR and CCPA regulations. We do not track or store any personal information for marketing or advertising purposes. Depending on your chosen authentication method you may also be subject to the privacy policies of third-party authentication providers, such as Google or GitHub.
+        Please review their policies for more information on how they handle your data. Once authenticated we keep your user profile (email, name) and the number of credits used in our database, but we do not save any of your past reframing sessions.
+        You can delete your account at any time to remove your data from our systems using the "Delete Account" button in the user menu. When you delete your account, we remove all personal information associated with it, such as your name, photo, and other user settings. To prevent misuse of our service,
+        we retain a minimal, pseudonymized record of your email address and your used credits. This record is stored in the form of a cryptographic hash, which cannot be used to reconstruct your data. The sole purpose of this
+        processing is to ensure fair use of our service. The legal basis for this is our legitimate interest under Art. 6(1)(f) GDPR. If you have any questions or concerns about how your data is handled, please contact us.
+        By accepting these terms, you acknowledge that you have read and understood this disclaimer and data processing agreement and agree to use reFrame in accordance with these terms.</p>`
+      };
+
+      const overlay = document.getElementById('popupOverlay');
+      const modal   = document.getElementById('popupModal');
+      const content = document.getElementById('popupContent');
+      const closeBtn= document.getElementById('popupClose');
+
+      if (!overlay || !modal || !content || !closeBtn) return;
+
+      let isOpen = false;
+
+      function openPopup(key) {
+        const html = POPUP_HTML[key] || `<p>Missing content for "${key}".</p>`;
+        content.innerHTML = html;
+        overlay.style.display = 'block';
+        setTimeout(() => overlay.style.opacity = '1', 300);
+        document.body.style.overflow = 'hidden';
+        isOpen = true;
+        // focus the close button for accessibility
+        setTimeout(()=> closeBtn.focus(), 0);
+      }
+
+        function closePopup() {
+          if (!isOpen) return;
+          overlay.style.opacity = '0';
+          setTimeout(() => overlay.style.display = 'none', 300);
+          setTimeout(() => document.body.style.overflow = '', 300);
+          setTimeout(() => content.innerHTML = '', 300);
+          setTimeout(() => isOpen = false, 300);
+        }
+
+      // Open on footer link click
+      document.addEventListener('click', function (e) {
+        const link = e.target.closest('.footer-link[data-popup]');
+        if (!link) return;
+        e.preventDefault();
+        const key = link.getAttribute('data-popup');
+        openPopup(key);
+      });
+
+      // Close on ✕ button
+      closeBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        closePopup();
+      });
+
+      // Close on outside click (overlay but not modal)
+      overlay.addEventListener('click', function (e) {
+        if (!modal.contains(e.target)) closePopup();
+      });
+
+      // Close on Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closePopup();
+      });
+    })();
+    </script>
+
 </body>
 </html>

@@ -4499,3 +4499,6 @@ body {
 #profile-pic-home {
 margin: 0 1em 1em 2em !important;
 }
+
+.bannerstyle{background-size:cover;background-position:center}
+.lazy-bg{background-image:none}

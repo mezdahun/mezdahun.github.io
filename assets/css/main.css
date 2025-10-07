@@ -160,7 +160,6 @@ input, select, textarea {
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #f0f2f5; /* A light background to make cards pop */
-  padding: 2rem;
 }
 
 /* 1. Grid Container */
